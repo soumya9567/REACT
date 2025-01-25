@@ -1,16 +1,25 @@
-import React from 'react'
-import Home from './pages/home'
+import React from "react";
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
 
 function App() {
   return (
-    <div>
-      {/* <h1>welcome to app.js</h1> */}
+    <div className=" flex flex-col">
+     
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/ProductDetails" element={<ProductDetails />}/>
 
-    <Home />
+
+      </Routes>
+        <Footer />
 
     </div>
-
-  )
+  );
 }
 
-export default App
+export default App;
