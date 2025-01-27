@@ -8,9 +8,6 @@ const  productList =
     },
     {
         product:"python"
-    },
-    {
-       product:"mern"
     }
 ]
 export default productList
