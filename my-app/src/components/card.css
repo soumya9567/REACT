@@ -9,7 +9,7 @@
 
 .card-image{
     width: 300px;
-    height: auto;
+    height: 600px;
     background-color: black;
     margin: auto;
 
@@ -18,7 +18,7 @@
 
 .card-image img{
     width: 300px;
-    height: auto;
+    height: 200px;
     object-fit: cover;
 }
 .card-image p{

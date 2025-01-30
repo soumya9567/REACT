@@ -1,8 +1,15 @@
 import React from "react";
 import "./card.css";
+import {toast} from 'react-toastify'
 // import productList from "../utiles/Demo";
 
-function Card({ product }) {
+function Card({ products }) {
+  
+
+function handleClick(){
+  toast.success("button clicked")
+}
+
   return (
     <div>
       <div className="card-image">
@@ -16,7 +23,8 @@ function Card({ product }) {
           dolore, necessitatibus sapiente qui praesentium asperiores eos fuga
           placeat
         </p>
-        <h1 className="text-white text-2xl">{product}</h1>
+        <button className=" text-5pxw-[60%] mt-12 bg-white text-black ml-28" onClick={handleClick} >ADD TO CART</button>
+
         {/* <h1 className="text-white"></h1> */}
 
         {/* <Link to="/productDetails">go to product</Link> */}
