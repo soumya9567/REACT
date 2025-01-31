@@ -1,35 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./card.css";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
+import { CartContext } from "../context/CartContext";
 // import productList from "../utiles/Demo";
 
-function Card({ products }) {
-  
+function Card({ product }) {
+  const { addToCart } = useContext(CartContext);
 
-function handleClick(){
-  toast.success("button clicked")
-}
+  function handleClick() {
+    addToCart(product)
+
+    toast.success("button clicked");
+  }
 
   return (
     <div>
       <div className="card-image">
-        <img
-          src="https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=400"
-          alt=""
-        />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          amet laboriosam praesentium adipisci quae. Doloribus animi possimus,
-          dolore, necessitatibus sapiente qui praesentium asperiores eos fuga
-          placeat
-        </p>
-        <button className=" text-5pxw-[60%] mt-12 bg-white text-black ml-28" onClick={handleClick} >ADD TO CART</button>
+        <img src={product.images[0]} alt={product.title} />
+        <p>{product.description}</p>
+        {/* <h1 className="text-white">{productData.title}</h1> */}
 
-        {/* <h1 className="text-white"></h1> */}
+        <button
+          className=" w-28 h-12 mt-12 text-black bg-white ml-28 rounded-lg"
+          onClick={handleClick}
+        >
+          ADD TO CART
+        </button>
 
         {/* <Link to="/productDetails">go to product</Link> */}
       </div>
-
     </div>
   );
 }
